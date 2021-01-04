@@ -9,5 +9,7 @@ public class removeElements {
             else
                 curr = curr.next;
         return head;
+        
+      
     }
 }
