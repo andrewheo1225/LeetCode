@@ -1,12 +1,20 @@
 public class middleNode {
     public ListNode middle(ListNode head) {
-       ListNode[] array = new ListNode[100];
-       int position = 0;
-       while(head.next != null)
-       {
-        array[position++] = head;
-        head = head.next;
-       }
-       return array[position /2];
+       public ListNode middleNode(ListNode head) {
+        if(head == null){
+            return null;
+        }
+        if(head.next == null){
+            return head;
+        }
+        ListNode fastptr = head;
+        ListNode slowptr = head;
+        while(fastptr.next != null){
+            fastptr = fastptr.next;
+            slowptr = slowptr.next;
+            if(fastptr.next == null)break;
+            fastptr = fastptr.next;
+        }
+        return slowptr;
     }
 }
